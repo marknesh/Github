@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileService } from './profile.service';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
