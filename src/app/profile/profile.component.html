@@ -8,20 +8,21 @@
 
     </form>
      <div class="row">
-        <div class="col-4">
+        <div class="col-md-8 col-sm-10 col-lg-6" >
    
     <div *ngIf="profile">
        <img src="{{profile.avatar_url}}" alt="">
        <br>
 
-       <span>Followers: {{profile.followers}}</span>
-       <span>Following: {{profile.following}}</span>
-       <span>Public gists: {{profile.public_gists}}</span>
+       <span class="badge badge-success">Followers: {{profile.followers}}</span>
+       <span class="badge badge-success">Following: {{profile.following}}</span>
+       <span class="badge badge-success">Public gists: {{profile.public_gists}}</span>
+      
        
     </div>
     </div>
     
-    <div class="col-8"><p *ngFor="let repo of repos">{{repo.name}} <a href="{{repo.html_url}}" class="btn btn-info" id="no">view </a></p></div>
+    <div class="col-md-6 col-sm-5 col-lg-6"><h1 *ngIf="profile">REPOSITORIES<span class="badge badge-warning">Public_repos{{profile.public_repos}}</span></h1><p *ngFor="let repo of repos"><b>{{repo.name|uppercase}}</b><br> <span *ngIf="repo.description">{{repo.description}}</span><br><a href="{{repo.html_url}}" class="btn btn-info" >view {{repo.name}}</a></p></div>
     </div>
     </div>
 
