@@ -12,3 +12,6 @@ img{
 body{
     background-color: blueviolet;
 }
+#no{
+    display:flex; justify-content:flex-end; 
+}

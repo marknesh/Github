@@ -8,7 +8,7 @@
 
     </form>
      <div class="row">
-        <div class="col-5">
+        <div class="col-4">
    
     <div *ngIf="profile">
        <img src="{{profile.avatar_url}}" alt="">
@@ -20,9 +20,9 @@
        
     </div>
     </div>
-    <div class="buttonView">
-    <div class="col-7"><p *ngFor="let repo of repos">{{repo.name}} <a href="{{repo.html_url}}" class="btn btn-info">view </a></p></div>
+    
+    <div class="col-8"><p *ngFor="let repo of repos">{{repo.name}} <a href="{{repo.html_url}}" class="btn btn-info" id="no">view </a></p></div>
     </div>
     </div>
 
-</div>
+
