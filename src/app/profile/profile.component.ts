@@ -8,13 +8,23 @@ import {ProfileService} from '../profile.service'
 })
 export class ProfileComponent implements OnInit {
   profile:any[]
+  username:string
+  repo:any[]
 
   constructor(private profileService:ProfileService) {
 this.profileService.getProfile().subscribe(user=>{
   console.log(user)
   this.profile=user
 })
+this.profileService.getRepo().subscribe(user=>{
+  console.log(user)
+  this.repo=user
+})
     
+   }
+   getInfo(){
+     this.profileService.getUser(this.username)
+     
    }
 
   ngOnInit() {
