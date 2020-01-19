@@ -1,4 +1,6 @@
 <div class="container">
+    <div class="row">
+        <div class="col-5">
     <form>
         <div class="form-group">
             <input type="text" [(ngModel)]="username" name="username" (keyup)="getInfo">
@@ -13,6 +15,9 @@
        <span>Following: {{profile.following}}</span>
        <span>Public gists: {{profile.public_gists}}</span>
        
+    </div>
+    </div>
+    <div class="col-7" ></div>
     </div>
 
 </div>
