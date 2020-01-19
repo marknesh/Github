@@ -9,7 +9,7 @@ import {ProfileService} from '../profile.service'
 export class ProfileComponent implements OnInit {
   profile:any[]
   username:string
-  repo:any[]
+  repos:any[]
 
   constructor(private profileService:ProfileService) {
 this.profileService.getProfile().subscribe(user=>{
@@ -18,7 +18,7 @@ this.profileService.getProfile().subscribe(user=>{
 })
 this.profileService.getRepo().subscribe(user=>{
   console.log(user)
-  this.repo=user
+  this.repos=user
 })
     
    }
