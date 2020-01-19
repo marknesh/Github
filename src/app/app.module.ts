@@ -5,17 +5,20 @@ import {HttpModule} from '@angular/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileService } from './profile.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
