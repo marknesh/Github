@@ -1,4 +1,11 @@
 <div class="container">
+    <form>
+        <div class="form-group">
+            <input type="text" [(ngModel)]="username" name="username" (keyup)="getInfo">
+
+        </div>
+
+    </form>
     <div *ngIf="profile">
        <img src="{{profile.avatar_url}}" alt="">
        <span>Followers: {{profile.followers}}</span>
