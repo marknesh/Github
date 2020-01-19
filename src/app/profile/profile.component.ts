@@ -15,6 +15,8 @@ export class ProfileComponent implements OnInit {
 
     
    }
+
+
    getInfo(){
      this.profileService.getUser(this.username);
      this.profileService.getProfile().subscribe(user=>{
