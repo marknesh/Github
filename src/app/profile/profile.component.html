@@ -27,7 +27,7 @@
 
     <div class="col-md-6 col-sm-5 col-lg-6">
       <h1 *ngIf="profile">REPOSITORIES<span class="badge badge-warning">Public_repos{{profile.public_repos}}</span></h1>
-      <p *ngFor="let repo of repos"><b>{{repo.name|uppercase}}</b><br> <span
+      <p *ngFor="let repo of repos"><b appHighlight>{{repo.name|uppercase}}</b><br> <span
           *ngIf="repo.description">{{repo.description}}</span><br><a href="{{repo.html_url}}" class="btn btn-info">view
           {{repo.name}}</a></p>
     </div>
