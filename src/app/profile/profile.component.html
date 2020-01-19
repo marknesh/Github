@@ -1,1 +1,10 @@
-{{profile.login}}
+<div class="container">
+    <div *ngIf="profile">
+       <img src="{{profile.avatar_url}}" alt="">
+       <span>Followers: {{profile.followers}}</span>
+       <span>Following: {{profile.following}}</span>
+       <span>Public gists: {{profile.public_gists}}</span>
+       
+    </div>
+
+</div>
