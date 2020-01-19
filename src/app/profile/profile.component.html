@@ -1,29 +1,34 @@
 <div class="container">
-   
-    <form >
-        <div class="form-group">
-            <input type="text" [(ngModel)]="username" name="username" (keyup)="getInfo()">
 
-        </div>
+  <form>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="username" name="username" (keyup)="getInfo()">
 
-    </form>
-     <div class="row">
-        <div class="col-md-8 col-sm-10 col-lg-6" >
-   
-    <div *ngIf="profile">
-       <img src="{{profile.avatar_url}}" alt="">
-       <br>
-
-       <span class="badge badge-success">Followers: {{profile.followers}}</span>
-       <span class="badge badge-success">Following: {{profile.following}}</span>
-       <span class="badge badge-success">Public gists: {{profile.public_gists}}</span>
-      
-       
-    </div>
-    </div>
-    
-    <div class="col-md-6 col-sm-5 col-lg-6"><h1 *ngIf="profile">REPOSITORIES<span class="badge badge-warning">Public_repos{{profile.public_repos}}</span></h1><p *ngFor="let repo of repos"><b>{{repo.name|uppercase}}</b><br> <span *ngIf="repo.description">{{repo.description}}</span><br><a href="{{repo.html_url}}" class="btn btn-info" >view {{repo.name}}</a></p></div>
-    </div>
     </div>
 
+  </form>
+  <div class="row">
+    <div class="col-md-8 col-sm-10 col-lg-6">
 
+      <div *ngIf="profile">
+
+        <img src="{{profile.avatar_url}}" alt="">
+        <br>
+        <a href="{{profile.html_url}} " class="btn btn-danger">View profile in github</a>
+        <br>
+        <span class="badge badge-success">Followers: {{profile.followers}}</span>
+        <span class="badge badge-success">Following: {{profile.following}}</span>
+        <span class="badge badge-success">Public gists: {{profile.public_gists}}</span>
+
+
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-5 col-lg-6">
+      <h1 *ngIf="profile">REPOSITORIES<span class="badge badge-warning">Public_repos{{profile.public_repos}}</span></h1>
+      <p *ngFor="let repo of repos"><b>{{repo.name|uppercase}}</b><br> <span
+          *ngIf="repo.description">{{repo.description}}</span><br><a href="{{repo.html_url}}" class="btn btn-info">view
+          {{repo.name}}</a></p>
+    </div>
+  </div>
+</div>
