@@ -10,11 +10,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileService } from './profile.service';
 import { HighlightDirective } from './highlight.directive';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    HighlightDirective
+    HighlightDirective,
+   
   ],
   imports: [
     BrowserModule,
