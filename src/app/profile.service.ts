@@ -1,33 +1,71 @@
 import { Injectable } from '@angular/core';
-import {Http , Headers} from '@angular/http';
+import {HttpClient } from '@angular/common/http';
+import {Http} from '@angular/http'
 import 'rxjs/add/operator/map'
 import { environment } from 'src/environments/environment';
+import { from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 private username:string;
-apiUrl:"https://api.github.com/users/"
-clientid:'f3f4257e39d4ac33c0c9'
-clientsecret:'1f2b0f0fe31d2b84218f8b7734553e9d017f27a3'
+
+profile:any
+
+repos:any
 
 
-  constructor(private http:Http) {
+  constructor(private http:HttpClient) {
     this.username="marknesh"
   }
 
+
+  
   getProfile(){
-    return this.http.get(this.apiUrl+this.username+"?client_id="+this.clientid+ "&client_secret="+this.clientsecret).map(res =>res.json())
+    return this.http.get(environment.apiUrl+this.username+"?client_id="+environment.clientid+ "&client_secret="+environment.clientsecret)
   }
 
   getRepo(){
-    return this.http.get(this.apiUrl +this.username+"/repos?client_id="+this.clientid+ "&client_secret="+this.clientsecret).map(res =>res.json())
+    return this.http.get(environment.apiUrl +this.username+"/repos?client_id="+environment.clientid+ "&client_secret="+environment.clientsecret)
   }
 
   getUser(username:string){
     this.username=username
 
-  }
 
+  }
+  
+  quoteRequest(){
+    interface ApiResponse{
+      profile:any
+      username:string
+      repos:any
+    }
+    let promise = new Promise((resolve,reject)=>{
+      this.http.get<ApiResponse>((environment.apiUrl)+this.username+"?client_id="+environment.clientid+ "&client_secret="+environment.clientsecret)
+    .toPromise().then(response=>{
+        this.profile = response
+       this.repos=response
+       this.getProfile().subscribe(user=>{
+        console.log(user);
+        this.profile=user
+      })
+
+     
+       
+       
+        resolve()
+      },
+      error=>{
+        this.profile="error";
+        this.repos="error in repo"
+        
+
+        reject(error)
+      })
+    })
+    return promise
+  }
 }
+

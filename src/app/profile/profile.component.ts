@@ -8,9 +8,9 @@ import {User} from '../user'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  profile:any[]
+  profile:any
   username:string
-  repos:any[]
+  repos:any
 
   constructor(private profileService:ProfileService) {
 
@@ -32,6 +32,7 @@ export class ProfileComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.profileService.quoteRequest()
   }
 
 }
