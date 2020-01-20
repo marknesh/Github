@@ -16,3 +16,11 @@ body{
     padding: 10px;
 }
 
+.header{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 900;
+}
+
