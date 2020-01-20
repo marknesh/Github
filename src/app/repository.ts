@@ -1,3 +1,3 @@
 export class Repository {
-    repos:[any]
+    repos:any[]
 }

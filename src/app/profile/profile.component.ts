@@ -8,7 +8,7 @@ import {User} from '../user'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
- 
+
   profile:any[]
   username:string
   repos:any[]
