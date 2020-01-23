@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 import {Http} from '@angular/http'
-import 'rxjs/add/operator/map'
+// import 'rxjs/add/operator/map'
 import { environment } from 'src/environments/environment';
 import { from } from 'rxjs';
 
@@ -17,7 +17,7 @@ repos:any
 
 
   constructor(private http:HttpClient) {
-    this.username="marknesh"
+   
   }
 
 
